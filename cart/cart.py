@@ -8,6 +8,7 @@ class Cart(object):
         """
         initialize the cart.
         """
+        
         self.session = request.session
         cart = self.session.get(settings.CART_SESSION_ID)
         if not cart:
