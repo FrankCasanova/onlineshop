@@ -6,11 +6,11 @@ ENV PYTHONDONWRITEBYTECODE 1
 ENV PYTHONNUNBUFFERED 1
 
 #Set work directory
-WORKDIR /online-shop
+WORKDIR /onlineshop
 
 #Isnstall dependencies
-COPY Pipfile Pipfile.lock /online-shop/
+COPY Pipfile Pipfile.lock /onlineshop/
 RUN pip install pipenv && pipenv install --system
 
 #Copy project
-COPY . /code/
+COPY . /onlineshop/
