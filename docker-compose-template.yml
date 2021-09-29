@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+
+
+  onlineshop:
+    build: 
+      context: .
+    command: python /onlineshop/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+      - rabbitmq
+    environment: 
+      - "DJANGO_SECRET_KEY=yourpassword"
+      - "DJANGO_DEBUG=True"  
+
+
+  db:
+    image: postgres:11
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+  
+
+  rabbitmq:
+    image: rabbitmq:3.7-alpine
+  
+  celery-worker:
+    build:
+      context: .
+    environment: 
+      - "DJANGO_SECRET_KEY=yourpassword"
+      - "DJANGO_DEBUG=True"   
+    command: celery -A myshop worker --loglevel=info    
+    ports: []
+    depends_on:
+      - onlineshop
+      - rabbitmq
+      - db 
+      - flower
+
+
+  flower:
+    image: mher/flower
+    build:
+      context: .
+    command: celery -A myshop flower
+    ports: 
+      - 5555:5555
+    environment:
+      - "DJANGO_SECRET_KEY=yourpassword"
+      - "DJANGO_DEBUG=True" 
+      - CELERY_BROKER_URL=amqp://rabbitmq
+    depends_on:
+      - rabbitmq
+      - onlineshop
+
+    
