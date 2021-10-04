@@ -10,8 +10,11 @@ environs = "*"
 celery = "*"
 psycopg2-binary = "*"
 dj-database-url = "*"
+<<<<<<< HEAD
 flower = "*"
 braintree = "*"
+=======
+>>>>>>> parent of 00025e2... rabbitMQ, Celery and Flower configured
 
 [dev-packages]
 

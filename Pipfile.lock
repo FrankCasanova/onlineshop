@@ -1,7 +1,11 @@
 {
     "_meta": {
         "hash": {
+<<<<<<< HEAD
             "sha256": "91dc152fa387f02b961b83cef5ff5753cdb11179ef2d1206b1ec039d6cd0f543"
+=======
+            "sha256": "8f56087f35d7505db6160548a0a2cd2391aaf0ac14205581e071a44701427623"
+>>>>>>> parent of 00025e2... rabbitMQ, Celery and Flower configured
         },
         "pipfile-spec": 6,
         "requires": {
@@ -124,6 +128,7 @@
             "index": "pypi",
             "version": "==9.3.3"
         },
+<<<<<<< HEAD
         "flower": {
             "hashes": [
                 "sha256:2e17c4fb55c569508f3bfee7fe41f44b8362d30dbdf77b604a9d9f4740fe8cbd",
@@ -148,6 +153,8 @@
             "markers": "python_version >= '3'",
             "version": "==3.2"
         },
+=======
+>>>>>>> parent of 00025e2... rabbitMQ, Celery and Flower configured
         "kombu": {
             "hashes": [
                 "sha256:01481d99f4606f6939cdc9b637264ed353ee9e3e4f62cfb582324142c41a572d",
@@ -222,14 +229,6 @@
             ],
             "index": "pypi",
             "version": "==8.3.2"
-        },
-        "prometheus-client": {
-            "hashes": [
-                "sha256:3a8baade6cb80bcfe43297e33e7623f3118d660d41387593758e2fb1ea173a86",
-                "sha256:b014bc76815eb1399da8ce5fc84b7717a3e63652b0c0f8804092c9363acab1b2"
-            ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
-            "version": "==0.11.0"
         },
         "prompt-toolkit": {
             "hashes": [
@@ -313,6 +312,7 @@
             "markers": "python_version >= '3.5'",
             "version": "==0.4.2"
         },
+<<<<<<< HEAD
         "tornado": {
             "hashes": [
                 "sha256:0a00ff4561e2929a2c37ce706cb8233b7907e0cdc22eab98888aca5dd3775feb",
@@ -368,6 +368,8 @@
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'",
             "version": "==1.26.7"
         },
+=======
+>>>>>>> parent of 00025e2... rabbitMQ, Celery and Flower configured
         "vine": {
             "hashes": [
                 "sha256:4c9dceab6f76ed92105027c49c823800dd33cacce13bdedc5b914e3514b7fb30",
