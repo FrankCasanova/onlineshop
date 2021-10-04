@@ -25,6 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env.str('DJANGO_SECRET_KEY')
+# SECRET_KEY = '0498uqepmr8q4u0q9pruvmwepr98quevmqpwer8uqwepq9mew8ufme8qpwu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DJANGO_DEBUG', default=False)
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'orders',
+    'payments',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +65,7 @@ ROOT_URLCONF = 'myshop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,7 +137,23 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CART_SESSION_ID = ' cart'
-
+#email backend
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+#message broker
 CELERY_BROKER_URL = 'amqp://rabbitmq'
+
+#payment configurations braintree
+
+BRAINTREE_MERCHANT_ID='c5gsrk3jwc4qj827'
+BRAINTREE_PUBLIC_KEY='vqmby59qjrspycpd'
+BRAINTREE_PRIVATE_KEY='6f625cb63e27fd0cd2db3d54618afbf2' 
+
+import braintree
+
+BRAINTREE_CONF = braintree.Configuration(
+    braintree.Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)

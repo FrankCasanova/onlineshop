@@ -11,6 +11,7 @@ celery = "*"
 psycopg2-binary = "*"
 dj-database-url = "*"
 flower = "*"
+braintree = "*"
 
 [dev-packages]
 

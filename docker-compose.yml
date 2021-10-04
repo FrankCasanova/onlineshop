@@ -8,15 +8,16 @@ services:
       context: .
     command: python /onlineshop/manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/app
+      - .:/onlineshop
     ports:
       - 8000:8000
     depends_on:
       - db
       - rabbitmq
     environment: 
-      - "DJANGO_SECRET_KEY=yourpassword"
-      - "DJANGO_DEBUG=True"  
+      - "DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}"
+      - "DJANGO_DEBUG=True"
+       
 
 
   db:
@@ -34,8 +35,8 @@ services:
     build:
       context: .
     environment: 
-      - "DJANGO_SECRET_KEY=yourpassword"
-      - "DJANGO_DEBUG=True"   
+      - "DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}"
+      - "DJANGO_DEBUG=True"  
     command: celery -A myshop worker --loglevel=info    
     ports: []
     depends_on:
@@ -53,7 +54,7 @@ services:
     ports: 
       - 5555:5555
     environment:
-      - "DJANGO_SECRET_KEY=yourpassword"
+      - "DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}"
       - "DJANGO_DEBUG=True" 
       - CELERY_BROKER_URL=amqp://rabbitmq
     depends_on:
@@ -61,3 +62,12 @@ services:
       - onlineshop
 
     
+
+  
+
+
+
+
+
+volumes:
+  postgres_data:
