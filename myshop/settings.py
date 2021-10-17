@@ -49,6 +49,10 @@ INSTALLED_APPS = [
     'orders',
     'payments',
     'coupons',
+
+    #thir party
+    'rosetta',
+    'parler',
 ]
 
 MIDDLEWARE = [
@@ -114,14 +118,27 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
+LANGUAGE_CODE = 'en'
+
 from django.utils.translation import gettext_lazy as _
 
-LANGUAGE = (
+
+LANGUAGES = (
     ('en', _('English')),
     ('es', _('Spanish')),
 )
 
-LANGUAGE_CODE = 'en'
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'es'},
+    ),
+    'default': {
+        'fallback': 'en',
+        'hide_untranslated': False,
+    }
+}
+
 
 LOCALE_PATH = (
     BASE_DIR / 'locale/',

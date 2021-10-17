@@ -13,6 +13,8 @@ dj-database-url = "*"
 flower = "*"
 braintree = "*"
 weasyprint = "*"
+django-rosetta = "*"
+django-parler = "*"
 
 [dev-packages]
 
