@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     #thir party
     'rosetta',
     'parler',
+    'localflavor'
 ]
 
 MIDDLEWARE = [
