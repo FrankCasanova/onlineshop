@@ -188,3 +188,8 @@ BRAINTREE_CONF = braintree.Configuration(
     BRAINTREE_PUBLIC_KEY,
     BRAINTREE_PRIVATE_KEY
 )
+
+REDIS_HOST = 'redis'
+REDIS_PORT = 6379
+REDIS_DB = 1
+

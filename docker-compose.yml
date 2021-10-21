@@ -17,6 +17,7 @@ services:
     environment: 
       - "DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}"
       - "DJANGO_DEBUG=True"
+      - "REDIS_HOST=redis"
        
 
 
@@ -30,7 +31,10 @@ services:
 
   rabbitmq:
     image: rabbitmq:3.7-alpine
-  
+
+  redis:
+    image: redis:alpine
+    
   celery-worker:
     build:
       context: .

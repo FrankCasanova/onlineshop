@@ -12,5 +12,6 @@ WORKDIR /onlineshop
 COPY Pipfile Pipfile.lock /onlineshop/
 RUN pip install pipenv && pipenv install --system
 
+
 #Copy project
 COPY . /onlineshop/
