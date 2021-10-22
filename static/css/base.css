@@ -74,6 +74,7 @@ table.cart {
 
 table.cart img {
     width:180px;
+    border-radius: 7%;
 }
 
 tbody td.num {
@@ -193,8 +194,9 @@ ul.errorlist {
 }
 
 .product-list .item img {
-    width:100%;
-    margin-bottom:8px;
+    width:60%;
+    float:left;
+    padding:0 20px 20px 0;
 }
 
 .product-detail {

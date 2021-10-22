@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 from environs import Env
 
@@ -141,8 +141,8 @@ PARLER_LANGUAGES = {
 }
 
 
-LOCALE_PATH = (
-    BASE_DIR / 'locale/',
+LOCALE_PATHS = (
+    (BASE_DIR / 'locale/'),
 )
 TIME_ZONE = 'UTC'
 
